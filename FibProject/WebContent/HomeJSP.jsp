@@ -7,9 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="HelloServlet">			
+<form action="FibServerlet">			
 			 Please enter a number to calculate fibonacci up to: <br>
-			<input type="text" name="max"size="20px">
+			<input type="text" name="max" size="20px">
 			<input type="submit" value="submit">						
 		</form>		
 </body>

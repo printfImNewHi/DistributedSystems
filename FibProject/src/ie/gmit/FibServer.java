@@ -1,9 +1,11 @@
-package ie.gmit.computing;
+package ie.gmit;
 
 import java.util.*;
 
 
 public class FibServer {
+	Timer myTimer;
+	
 	private LinkedList<FibRequest> inqueue = new LinkedList<FibRequest>();
 	
 	private Map<Integer , String> outqueue = new HashMap<Integer , String>();

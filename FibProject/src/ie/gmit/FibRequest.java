@@ -1,4 +1,4 @@
-package ie.gmit.computing;
+package ie.gmit;
 
 public class FibRequest {
 	private int jobNum;

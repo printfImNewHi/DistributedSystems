@@ -5,11 +5,11 @@
     xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
     http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
   <servlet>
-    <servlet-name>Hello</servlet-name>
-    <servlet-class>ie.gmit.computing.HelloWorld</servlet-class>
+    <servlet-name>FibServerlet</servlet-name>
+    <servlet-class>ie.gmit.FibServerlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Hello</servlet-name>
-    <url-pattern>/HelloServlet</url-pattern>
+    <servlet-name>FibServerlet</servlet-name>
+    <url-pattern>/FibServerlet</url-pattern>
   </servlet-mapping>
 </web-app>

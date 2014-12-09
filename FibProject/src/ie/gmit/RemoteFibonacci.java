@@ -1,4 +1,4 @@
-package ie.gmit.computing;
+package ie.gmit;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
