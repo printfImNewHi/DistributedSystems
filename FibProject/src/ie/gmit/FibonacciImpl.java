@@ -10,8 +10,8 @@ public class FibonacciImpl extends UnicastRemoteObject implements RemoteFibonacc
 	private static final long serialVersionUID = 1L;
 	private RemoteFibonacci remote;
 
-	protected FibonacciImpl() throws RemoteException {
-		super();
+	protected FibonacciImpl(int port) throws RemoteException {
+		super(port);
 		// TODO Auto-generated constructor stub
 	}
 	

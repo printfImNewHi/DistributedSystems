@@ -4,14 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Fibonacci request</title>
 </head>
 <body>
-<form action="FibServerlet" method="get">			
-			 Please enter a number to calculate fibonacci up to: <br>
-			 <input type="hidden" name="request-type" value="add"/>
-			<input type="text" name="max" size="20px">
-			<input type="submit" value="submit">						
-		</form>		
+	          
+	            Job number is :<%=request.getAttribute("jobnum") %>
+	           
 </body>
 </html>

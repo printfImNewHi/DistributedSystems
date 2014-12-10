@@ -14,7 +14,12 @@ public class FibServer {
 		int random = (int)(Math.random() * max + System.currentTimeMillis());
 		inqueue.add(new FibRequest(random, max));
 		return random;
-		//weifhawlh
+		
+		
+	}
+	
+	public void put(int jobNum,String fibNum){
+		outqueue.put(jobNum, fibNum);
 		
 	}
 	
