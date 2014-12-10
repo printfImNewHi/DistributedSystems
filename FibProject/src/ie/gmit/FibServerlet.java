@@ -17,7 +17,7 @@ public class FibServerlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	FibServer fibserver=new FibServer();
+	FibServer fibserver = new FibServer();
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
@@ -31,16 +31,18 @@ public class FibServerlet extends HttpServlet {
 		// reading the user input
 		int max= Integer.parseInt(request.getParameter("max"));
 		int jobNum=fibserver.add(max);
-		String type=request.getParameter("request-type");
+		String type = request.getParameter("request-type");
 		//int job = fib.getJobNum();
 
 		if(type.equals("add")){
 
 			try {
 				RemoteFibonacci remotefibonacci=(RemoteFibonacci)Naming.lookup("rmi://localhost:1099/fibo");
-				String result=remotefibonacci.fibonacciMethod(max);
+				
+				String result = remotefibonacci.fibonacciMethod(max);
+				
 				fibserver.put(jobNum, result);
-				System.out.println(result);
+				//System.out.println(result);
 
 				request.setAttribute("result",result);
 				request.getRequestDispatcher("Result.jsp").forward(request,response);

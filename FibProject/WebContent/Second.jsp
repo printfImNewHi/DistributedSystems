@@ -7,8 +7,6 @@
 <title>Fibonacci request</title>
 </head>
 <body>
-	          
-	            Job number is :<%=request.getAttribute("jobnum") %>
-	           
+	  Job number is :<%=request.getAttribute("jobnum") %>          
 </body>
 </html>
