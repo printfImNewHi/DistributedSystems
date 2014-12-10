@@ -4,16 +4,20 @@ import java.math.BigInteger;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
-public class Fibonacci extends UnicastRemoteObject implements RemoteFibonacci{
+public class FibonacciImpl extends UnicastRemoteObject implements RemoteFibonacci{
 
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
+	private RemoteFibonacci remote;
 
-	protected Fibonacci() throws RemoteException {
+	protected FibonacciImpl() throws RemoteException {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+	
+	public FibonacciImpl(RemoteFibonacci remote) throws RemoteException {
+		super();
+		this.remote = remote;
 	}
 	
 	public String fibonacciMethod(int max) throws RemoteException{
@@ -35,6 +39,11 @@ public class Fibonacci extends UnicastRemoteObject implements RemoteFibonacci{
 					f2 = fib;
 				}
 				return bf.toString();	
-			}
+		}
 	}
+
+	public RemoteFibonacci getRemote() {
+		return remote;
+	}
+
 }

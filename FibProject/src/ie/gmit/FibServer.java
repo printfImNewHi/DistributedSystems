@@ -13,7 +13,7 @@ public class FibServer {
 	public int add(int max){
 		int random = (int)(Math.random() * max + System.currentTimeMillis());
 		inqueue.add(new FibRequest(random, max));
-		return max;
+		return random;
 		
 	}
 	

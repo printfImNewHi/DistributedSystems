@@ -9,17 +9,21 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;
 
 public class FibServerlet extends HttpServlet { 
-  /**
-	 * 
-	 */
+ 
 	private static final long serialVersionUID = 1L;
-
-protected void doGet(HttpServletRequest request, 
-      HttpServletResponse response) throws ServletException, IOException 
-  {
 	
+	FibServer fibserver=new FibServer();
+	
+
+protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+  {
+	String value;
     // reading the user input
-    int max= Integer.parseInt(request.getParameter("max"));  
+    int max= Integer.parseInt(request.getParameter("max"));
+    int jobNum=fibserver.add(max);
+    //int job = fib.getJobNum();
+    
+    
     
     PrintWriter out = response.getWriter();
     out.println (
@@ -32,11 +36,26 @@ protected void doGet(HttpServletRequest request,
         "<body> \n" +
           "<font size=\"12px\" Fibonacci=\"\">" +
             "Your sequence you entered is : "+ max +" " +
-            "Your Job Number is : "+
+            "Your sequence you entered is : "+ jobNum +" " +
+            ""+
           "</font> \n" +
         "</body> \n" +
       "</html>" 
         
     );  
-  }  
+    
+    
+  }
+
+
+
+
+@Override
+protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+		throws ServletException, IOException {
+	// TODO Auto-generated method stub
+	 doGet(req,resp);
+}  
+
+
 }

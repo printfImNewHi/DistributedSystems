@@ -1,6 +1,10 @@
 package ie.gmit;
 
-public class FibRequest {
+import java.io.Serializable;
+
+public class FibRequest implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
 	private int jobNum;
 	private int max;
 	
