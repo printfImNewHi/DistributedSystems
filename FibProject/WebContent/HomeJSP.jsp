@@ -8,10 +8,10 @@
 </head>
 <body>
 <form action="FibServerlet" method="get">			
-			 Please enter a number to calculate fibonacci up to: <br>
-			 <input type="hidden" name="request-type" value="add"/>
+			 Enter a number to calculate fibonacci up to: <br>
+			<input type="hidden" name="Input" value="add"/>
 			<input type="text" name="max" size="20px">
 			<input type="submit" value="submit">						
-		</form>		
+</form>		
 </body>
 </html>

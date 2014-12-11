@@ -8,11 +8,10 @@
 </head>
 <body>
 
-<%
- out.println(request.getAttribute("result"));
-%>
+<%out.println(request.getParameter("fib"));%>
+
 <form action="HomeJSP.jsp">
- <input type="submit" value="return to start">
+<input type="submit" value="return to start">
 </form>
 </body>
 </html>

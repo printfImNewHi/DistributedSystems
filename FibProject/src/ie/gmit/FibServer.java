@@ -14,13 +14,6 @@ public class FibServer {
 		int random = (int)(Math.random() * max + System.currentTimeMillis());
 		inqueue.add(new FibRequest(random, max));
 		return random;
-		
-		
-	}
-	
-	public void put(int jobNum,String fibNum){
-		outqueue.put(jobNum, fibNum);
-		
 	}
 	
 	public String getResult(int jobNum){
@@ -32,7 +25,9 @@ public class FibServer {
 		else{
 			return null;
 		}
-		
 	}
-
+	
+	public void put(int jobNum,String fibNum){
+		outqueue.put(jobNum, fibNum);
+	}
 }

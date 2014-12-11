@@ -4,9 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Fibonacci request</title>
+<title>Fibonacci Request</title>
 </head>
 <body>
-	  Job number is :<%=request.getAttribute("jobnum") %>          
+	
+	  Job number is :<%=request.getAttribute("jobnum") %> 
+	  <%response.addHeader("refresh","10;http://localhost:8080/FibProject/FibServerlet?Input=poll&jobnum="+request.getAttribute("jobnum")); %>
+<input type="submit" value="GetResult">   
+</form>
 </body>
 </html>
