@@ -29,7 +29,7 @@ public class FibServerlet extends HttpServlet {
 			Naming.rebind("fibo",fibonacci);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
+		}//change
 	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
