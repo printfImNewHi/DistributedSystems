@@ -19,6 +19,7 @@ public class FibServerlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 	FibServer fibServe;
+	int jobNum;
 
 	public void  init(){
 		fibServe = new FibServer();
@@ -44,8 +45,8 @@ public class FibServerlet extends HttpServlet {
 				RemoteFibonacci remotefibonacci=(RemoteFibonacci)Naming.lookup("rmi://localhost:1099/fibo");
 				String result = remotefibonacci.fibonacciMethod(max);
 				fibServe.put(jobNum, result);
-				
-				System.out.println(result);
+				System.out.println("The Job Number is " + jobNum);
+				System.out.println("The Fibonacci is " + result);
 				request.setAttribute("jobnum",jobNum);
 				request.setAttribute("result",result);
 				request.getRequestDispatcher("Second.jsp").forward(request,response);
@@ -56,7 +57,7 @@ public class FibServerlet extends HttpServlet {
 			}
 
 		}else if(type.equals("poll")){
-			System.out.println("Polling for result page");
+			System.out.println("Polling for Result Page");
 			String returnType = request.getParameter("result");
 			if(returnType!=null){
 				response.sendRedirect("Result.jsp?result=" + returnType);
