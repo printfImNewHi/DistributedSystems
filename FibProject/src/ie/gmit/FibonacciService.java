@@ -15,65 +15,64 @@ import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 
 import  com.sun.org.apache.xml.internal.security.Init;
-public class FibServerlet extends HttpServlet { 
+public class FibonacciService extends HttpServlet { 
 
 	private static final long serialVersionUID = 1L;
 	FibServer fibServe;
 
 	public void  init(){
 		fibServe = new FibServer();
-		System.out.println("initialisation");
+		System.out.println("Creating Registry!!!!");
 		try {
 			RemoteFibonacci fibonacci = new FibonacciImpl(1099);
 			LocateRegistry.createRegistry(1099);
 			Naming.rebind("fibo",fibonacci);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}//change
+		}
 	}
-	
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
-		 
 		String type = request.getParameter("Input");
-	
+
 		if(type.equals("add")){
-			System.out.println("this is add");
+			System.out.println("LookUp and Adding to the Queue");
 			int max = Integer.parseInt(request.getParameter("max"));
 			int jobNum = fibServe.add(max);
 			try {
 				RemoteFibonacci remotefibonacci=(RemoteFibonacci)Naming.lookup("rmi://localhost:1099/fibo");
 				String result = remotefibonacci.fibonacciMethod(max);
 				fibServe.put(jobNum, result);
+				
 				System.out.println(result);
 				request.setAttribute("jobnum",jobNum);
 				request.setAttribute("result",result);
 				request.getRequestDispatcher("Second.jsp").forward(request,response);
 			} catch (NotBoundException e) {
 				// TODO Auto-generated catch block
-				System.out.println("sth wrong with rmi");
+				System.out.println("RMI problem");
 				e.printStackTrace();
 			}
-		
+
 		}else if(type.equals("poll")){
-			System.out.println("this is poll");
-			String returnType=request.getParameter("jobnum");
+			System.out.println("Polling for result page");
+			String returnType = request.getParameter("result");
 			if(returnType!=null){
-				response.sendRedirect("Result.jsp?fib="+returnType);
+				response.sendRedirect("Result.jsp?result=" + returnType);
 			}else{
+		
 				response.sendRedirect("Second.jsp");
+		
 			}
 		}
-		
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-
 		doGet(req,resp);
 	}  
-
 
 }

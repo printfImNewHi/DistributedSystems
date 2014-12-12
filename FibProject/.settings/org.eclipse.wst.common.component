@@ -2,7 +2,7 @@
     <wb-module deploy-name="FibProject">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="FibProject"/>
         <property name="java-output-path" value="/FibProject/build/classes"/>
+        <property name="context-root" value="FibProject"/>
     </wb-module>
 </project-modules>

@@ -16,7 +16,7 @@ public class FibServer {
 		return random;
 	}
 	
-	public String getResult(int jobNum){
+	public String getResult(int jobNum) throws InterruptedException{
 		if (outqueue.containsKey(jobNum)) {
 			String result = outqueue.get(jobNum);
 			outqueue.remove(jobNum);

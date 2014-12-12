@@ -7,8 +7,8 @@
 <title>Result Page</title>
 </head>
 <body>
-
-<%out.println(request.getParameter("fib"));%>
+The Fibonacci Result
+<%out.println(request.getParameter("result"));%>
 
 <form action="HomeJSP.jsp">
 <input type="submit" value="return to start">
