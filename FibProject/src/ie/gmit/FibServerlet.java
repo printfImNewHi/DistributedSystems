@@ -62,7 +62,6 @@ public class FibServerlet extends HttpServlet {
 			} else {
 
 				response.sendRedirect("Second.jsp");
-
 			}
 		}
 	}
