@@ -9,6 +9,7 @@
 <body>
 <form action="FibServerlet" method="get">			
 			 Enter a number to calculate Fibonacci Sequence Lenght: <br>
+			 Value 1-100 
 			<input type="hidden" name="Input" value="add"/>
 			<input type="text" name="max" size="50px">
 			<input type="submit" value="submit">						

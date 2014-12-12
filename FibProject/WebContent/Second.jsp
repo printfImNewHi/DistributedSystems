@@ -7,10 +7,11 @@
 <title>Fibonacci Request</title>
 </head>
 <body>
-Job number is :<%=request.getAttribute("jobnum") %> <br>
-      Fib seq= <%=request.getAttribute("result")%>
+
+<form action="">
+      Job number is :<%=request.getAttribute("jobnum") %> <br>
 	  <%response.addHeader("refresh","10;http://localhost:8080/FibProject/FibServerlet?Input=poll&fib="+request.getAttribute("result")); %>
   	  This Page will Refresh in 10 seconds
-</form>
+ </form>
 </body>
 </html>

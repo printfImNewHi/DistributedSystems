@@ -43,7 +43,6 @@ public class FibServerlet extends HttpServlet {
 				String result = remotefibonacci.fibonacciMethod(max);
 				fibServe.put(jobNum, result);
 				System.out.println("The job number is :" + jobNum);
-				System.out.println("The Fibonacci is :" + result);
 				request.setAttribute("jobnum", jobNum);
 				request.setAttribute("result", result);
 				request.getRequestDispatcher("Second.jsp").forward(request,
@@ -59,6 +58,7 @@ public class FibServerlet extends HttpServlet {
 			String returnType = fibServe.getResult(jobNum);
 			if (returnType != null) {
 				response.sendRedirect("Result.jsp?result=" + returnType);
+				System.out.println("The Fibonacci is :"+ returnType);
 			} else {
 
 				response.sendRedirect("Second.jsp");
