@@ -58,7 +58,7 @@ public class FibServerlet extends HttpServlet {
 
 		}else if(type.equals("poll")){
 			System.out.println("Polling for Result Page");
-			String returnType = request.getParameter("result");
+			String returnType = request.getParameter("jobNum");
 			if(returnType!=null){
 				response.sendRedirect("Result.jsp?result=" + returnType);
 			}else{
