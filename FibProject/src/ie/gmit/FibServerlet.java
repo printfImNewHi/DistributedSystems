@@ -34,7 +34,7 @@ public class FibServerlet extends HttpServlet {
 		String type = request.getParameter("Input");
 
 		if (type.equals("add")) {
-			System.out.println("this is add");
+			System.out.println("Calculating the Fibonacci!!");
 			int max = Integer.parseInt(request.getParameter("max"));
 			jobNum = fibServe.add(max);
 			try {
@@ -42,21 +42,21 @@ public class FibServerlet extends HttpServlet {
 						.lookup("rmi://localhost:1099/fibo");
 				String result = remotefibonacci.fibonacciMethod(max);
 				fibServe.put(jobNum, result);
-				System.out.println(result);
+				System.out.println("The job number is :" + jobNum);
+				System.out.println("The Fibonacci is :" + result);
 				request.setAttribute("jobnum", jobNum);
 				request.setAttribute("result", result);
 				request.getRequestDispatcher("Second.jsp").forward(request,
 						response);
 			} catch (NotBoundException e) {
 				// TODO Auto-generated catch block
-				System.out.println("RMI problem");
+				System.out.println("NoBound Ex");
 				e.printStackTrace();
 			}
 
 		} else if (type.equals("poll")) {
-			System.out.println("this is poll");
+			System.out.println("Polling for the result Page");
 			String returnType = fibServe.getResult(jobNum);
-			System.out.println("returnType" + returnType);
 			if (returnType != null) {
 				response.sendRedirect("Result.jsp?result=" + returnType);
 			} else {
