@@ -10,7 +10,7 @@
 Job number is :<%=request.getAttribute("jobnum") %> <br>
       Fib seq= <%=request.getAttribute("result")%>
 	  <%response.addHeader("refresh","10;http://localhost:8080/FibProject/FibServerlet?Input=poll&fib="+request.getAttribute("result")); %>
-  	  This Page will refreash in 10 seconds
+  	  This Page will Refresh in 10 seconds
 </form>
 </body>
 </html>

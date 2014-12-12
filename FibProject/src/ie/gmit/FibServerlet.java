@@ -15,7 +15,7 @@ import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 
 import  com.sun.org.apache.xml.internal.security.Init;
-public class FibonacciService extends HttpServlet { 
+public class FibServerlet extends HttpServlet { 
 
 	private static final long serialVersionUID = 1L;
 	FibServer fibServe;
