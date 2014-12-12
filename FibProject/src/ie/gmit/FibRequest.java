@@ -3,8 +3,9 @@ package ie.gmit;
 import java.io.Serializable;
 
 public class FibRequest implements Serializable{
-	
+	//Create Request Object that Serializable
 	private static final long serialVersionUID = 1L;
+	//
 	private int jobNum;
 	private int max;
 	

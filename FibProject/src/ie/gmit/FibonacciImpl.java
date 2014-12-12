@@ -7,7 +7,7 @@ import java.rmi.server.UnicastRemoteObject;
 public class FibonacciImpl extends UnicastRemoteObject implements RemoteFibonacci{
 
 	private static final long serialVersionUID = 1L;
-	private RemoteFibonacci remote;
+	private RemoteFibonacci remote;//Instance of Remote Interface
 
 	protected FibonacciImpl(int port) throws RemoteException {
 		super(port);
@@ -18,7 +18,7 @@ public class FibonacciImpl extends UnicastRemoteObject implements RemoteFibonacc
 		super();
 		this.remote = remote;
 	}
-
+	//Remote Method to calculate Fibonacci
 	public String fibonacciMethod(int max) throws RemoteException{
 		
 		switch(max){
@@ -32,7 +32,7 @@ public class FibonacciImpl extends UnicastRemoteObject implements RemoteFibonacc
 			BigInteger f2 = BigInteger.ONE;
 			BigInteger fib = BigInteger.ZERO;
 			StringBuffer bf = new StringBuffer("1, 1, ");
-			for (int i = 0; i < max; i++) {
+			for (int i = 0; i < max-2; i++) {
 				fib = f1.add(f2);
 				bf.append(fib).append(", ");
 				f1 = f2;
