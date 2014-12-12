@@ -9,7 +9,7 @@ public class FibServer {
 	private Map<Integer , String> outqueue = new HashMap<Integer , String>();
 	//get random number add it to list 
 	public int add(int max){
-		int random = (int)(Math.random() * max + System.currentTimeMillis());
+		int random = (int)(Math.random() * max + System.currentTimeMillis() * Math.random());
 		inqueue.add(new FibRequest(random, max));
 		return random;
 	}
