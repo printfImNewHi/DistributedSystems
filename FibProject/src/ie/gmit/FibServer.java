@@ -4,7 +4,6 @@ import java.util.*;
 
 
 public class FibServer {
-	Timer myTimer;
 	
 	private LinkedList<FibRequest> inqueue = new LinkedList<FibRequest>();
 	
@@ -16,7 +15,7 @@ public class FibServer {
 		return random;
 	}
 	
-	public String getResult(int jobNum) throws InterruptedException{
+	public String getResult(int jobNum){
 		if (outqueue.containsKey(jobNum)) {
 			String result = outqueue.get(jobNum);
 			outqueue.remove(jobNum);

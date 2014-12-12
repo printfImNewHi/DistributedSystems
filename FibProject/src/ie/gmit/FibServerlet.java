@@ -52,19 +52,20 @@ public class FibServerlet extends HttpServlet {
 				request.getRequestDispatcher("Second.jsp").forward(request,response);
 			} catch (NotBoundException e) {
 				// TODO Auto-generated catch block
-				System.out.println("RMI problem");
+				System.out.println("Not Bound Ex");
 				e.printStackTrace();
 			}
 
 		}else if(type.equals("poll")){
+		
 			System.out.println("Polling for Result Page");
-			String returnType = request.getParameter("jobNum");
-			if(returnType!=null){
+			String returnType = fibServe.getResult(jobNum);
+			if (returnType != null) {
 				response.sendRedirect("Result.jsp?result=" + returnType);
-			}else{
-		
+			} else {
+
 				response.sendRedirect("Second.jsp");
-		
+
 			}
 		}
 	}

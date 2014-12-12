@@ -4,13 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Fibonacci Sequence Lenght</title>
 </head>
 <body>
 <form action="FibServerlet" method="get">			
-			 Enter a number to calculate fibonacci up to: <br>
+			 Enter a number to calculate Fibonacci Sequence Lenght: <br>
 			<input type="hidden" name="Input" value="add"/>
-			<input type="text" name="max" size="20px">
+			<input type="text" name="max" size="50px">
 			<input type="submit" value="submit">						
 </form>		
 </body>
